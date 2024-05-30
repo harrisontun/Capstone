@@ -1,0 +1,779 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.dashboard, .about, .profile, .signout, .settings, #appcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    height: 100vh;
+    background-color: lightgray;
+    color: black;
+}
+
+.form-container {
+    border: 1px solid #ccc; /* Border around the form */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px; /* Optional: Rounded corners for the border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+    max-width: 600px; /* Adjust the max-width as per your layout */
+    margin-left: auto;
+    margin-right: auto; /* Centers the container */
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns items to the start of the row */
+    margin-bottom: 10px; /* Adds some space between each row */
+}
+
+.appinput, .form-row label {
+    width: 100%; /* Ensures labels and inputs take the full width */
+    box-sizing: border-box; /* Includes padding and border in the element's total width */
+}
+
+label {
+    margin-bottom: 5px; /* Space between label and input */
+}
+
+#appcontainer{
+    display: flex;
+    justify-content: center;
+    background-color: lightgray;
+
+
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+.appinput {
+    padding: 10px;
+    margin: 10px 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 50%; /* Ensures the select box fits the container */
+    -webkit-appearance: none; /* Removes default styling on some browsers */
+    -moz-appearance: none; 
+    appearance: none; /* Removes default arrow on some browsers */
+  }
+  
+  .appinput:focus {
+    border-color: #4CAF50; /* Green border for focus */
+    outline: none; /* Removes the default focus outline */
+  }
+
+  .submit-button {
+    background-color: #4CAF50; /* Green background */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+
+/*Top*/
+.navbar-container {
+    background-color: white;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Left Navbar*/
+.menu-bars {
+    margin-left: 2rem;
+    font-size: 2rem;
+    background: none;
+    color: black;
+}
+
+.nav-menu {
+    background-color: white;
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: 850ms;
+}
+
+.nav-menu.active {
+    left: 0;
+    transition: 450ms;
+}
+
+.nav-text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    list-style: none;
+    height: 60px;
+}
+
+.nav-text a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 4px;
+}
+
+.nav-text a:hover {
+    background-color: lightgray;
+    color: black;
+}
+
+.nav-menu-items {
+    width: 100%;
+}
+
+.navbar-toggle {
+    background-color: white;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.side-bar-title {
+    margin-left: 16px;
+}
+
+.menu-bars {
+    margin-left: 2rem;
+    font-size: 2rem;
+    background: none;
+    color: black;
+}
+
+/*Profile section*/
+.nav-profile {
+    color: black;
+    text-decoration: none;
+    font-size: 25px;
+    list-style: none;
+    width: 95%;
+    height: 60px;
+    margin: 15px 0px 50px;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.nav-profile a:hover {
+    background-color: lightgray;
+    color: black;
+}
+
+.username {
+    padding: 8px 0px 8px 16px;
+}
+
+.email {
+    font-size: 18px;
+}
+
+/*Sign out*/
+.signout-text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    bottom: 25px;
+    padding: 8px 0px 8px 16px;
+    list-style: none;
+    width: 95%;
+    height: 60px;
+}
+
+.signout-text a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 4px;
+}
+
+.signout-text a:hover {
+    background-color: lightgray;
+    color: black;
+}
+
+/*Center logo*/
+.logo a {
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: none;
+    color: black;
+    padding: 8px 16px 8px 16px;
+    border-radius: 4px;
+}
+
+.logo a:hover {
+    background-color: lightgray;
+    color: black;
+}
+
+.headerRight {
+    margin-right: 2rem;
+    font-size: 2rem;
+    background: none;
+    color: black;
+}
+
+/*Right Search*/
+.search {
+    float: left;
+    margin-right: 1rem;
+    font-size: 2rem;
+    background: none;
+    color: black;
+}
+
+/*Right Settings*/
+.settingsIcon {
+    text-decoration: none;
+    float: right;
+    font-size: 2.2rem;
+    background: none;
+    color: black;
+}
+
+.settingsIcon a {
+    text-decoration: none;
+    float: right;
+    font-size: 2.2rem;
+    background: none;
+    color: black;
+}
+
+/*About Page Table*/
+#about-page-table {
+    width: 80%;
+    border-collapse: collapse;
+}
+
+
+#about-page-table tbody tr td {
+    padding: 5px;
+    text-align: left;
+    border: 1px solid black;
+    font-size: 2rem;
+}
+
+/* CATALOG Page */
+.catalog-container {
+    display: flex;
+    height: 100vh;
+    background-color: lightgray;
+}
+
+.catalog {
+    width: 75%;
+    height: 100vh;
+    border-right: 1px solid black;
+    text-align: center;
+    margin: 5px;
+}
+
+.cart {
+    width: 25%;
+    height: 100vh;
+    text-align: center;
+    margin: 5px;
+}
+
+
+.centerHeader {
+    text-align: center;
+    padding: 20px;
+}
+
+/*'s Application Table*/
+.apps-table {
+    width: 100%;
+    border-collapse: collapse;
+    padding: auto;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+
+}
+
+.apps-table table, th, td {
+    border: #333 solid 1px;
+    padding-left: 5px;
+}
+/*Apps Table Header*/
+.apps-table thead {
+    font-family: Roboto-Bold;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.4;
+    text-transform: uppercase;
+    border-collapse: collapse;
+    padding: 21px;
+    text-align: left;
+}
+.apps-table th,td {
+    display: table-cell;
+    font-weight: unset;
+    padding-right: 10px;
+    vertical-align: inherit;
+}
+.apps-table td {
+    display: table-cell;
+    font-weight: unset;
+    padding-right: 10px;
+    font-size: 14px;
+    vertical-align: inherit;
+    height: 50px;
+}
+.apps-table th:nth-child(4)  td:nth-child(4) {
+    width: 25%; 
+}
+
+.apps-table th:nth-child(5) td:nth-child(5){
+    width: 20%; 
+
+}
+
+.apps-table th:nth-child(6)  td:nth-child(6){
+    width: 16.67%; 
+}
+
+.rejectButton {
+    background-color: tomato;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    width: 75px;
+    border: 0px;
+    margin: 10px 5px 10px 5px;
+}
+
+.centerHeader {
+    text-align: center;
+    padding: 20px;
+}
+
+.filters-container {
+    display: flex;
+    width: 90%;
+    padding-bottom: 20px;
+    padding-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    height: 75px;;
+    
+}
+
+.filters-container text,input,select {
+    font-size: 14px;
+}
+.filter-option {
+    margin: 5px 10px 5px 10px;
+    
+}
+
+.addUser {
+    margin: 5px;
+    text-align: center;}
+
+.acceptButton {
+    background-color: MediumSeaGreen ;
+    display:inline-block;
+    color: white;
+    padding: 10px;
+    width: 75px;
+    border: 0px;
+    margin-left: 20%;
+    margin-right: 2.5%;
+}
+
+.viewApp {
+    background-color: #779ecb;
+        display: inline-block;
+        color: white;
+        padding: 10px;
+        width: auto;
+        border: 0px;
+    margin: 10px 5px 10px 5px;
+    }
+
+.addUserForm {
+    margin-top: 10px; 
+    border: #333 1px;
+
+}
+.addUserForm label, select, input {
+    margin: 5px;
+    height: 30px;
+}
+
+.addUserForm button {
+    margin: 5px;
+    background-color: MediumSeaGreen;
+    color: white;
+    padding: 10px;
+    width: 20%;
+    border: 0px;
+    margin: 10px 5px 10px 5px;
+}
+
+/*Dashboard*/
+.dashboard-container {
+    display: flex;
+    height: 300vh;
+    background-color: lightgray;
+    text-align: center;
+    justify-content: center;
+}
+
+.dashboard {
+    width: 75%;
+    height: 100vh;
+    border-right: 1px solid black;
+    text-align: center;
+    justify-content: center;
+    margin: 5px;
+}
+.signin {
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    background-color: #f8f9fd;
+  }
+.signin input[type="text"],
+.signin input[type="password"] {
+  height: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.signin button[type="submit"] {
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  background: #01d28e;
+  border: 1px solid #01d28e;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.signin input[type="submit"]:hover {
+  background: #6cf0c2;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.login-form {
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.list-container {
+  display: flex;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.title {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 10px;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.delete-my-acct {
+    background-color : #d65a57;
+    color: white;
+    border-collapse: collapse;
+    border: 0ch;
+    width: 100px;
+    height: 50px;
+}
+.gray-button {
+    background-color : gray;
+    color: white;
+    border-collapse: collapse;
+    border: 0ch;
+    width: 100px;
+    height: 50px;
+}
+.addToSponsor {
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    background-color: #f8f9fd;
+}
+
+.addToSponsor form {
+    width: 300px; /* Adjust the width as needed */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: white;
+}
+.addToSponsor button, .existingApp button {
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    background: #01d28e;
+    border: 1px solid #01d28e;
+    color: #fff;
+    padding: 10px 20px;
+  }
+.addToSponsor input, select{
+    margin: 10px 0;
+    width: 50%;
+}
+.addToSponsor label {
+    margin: 5px;
+}
+.addToSponsor h2 {
+    text-align: center;
+}
+
+.existingApp {
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background-color: #f8f9fd;
+    height: 100vh;
+
+}
+.existingApp h1 {
+    text-align: center;
+    vertical-align: top;
+}
+
+.existingApp form {
+    width: 500px; /* Adjust the width as needed */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: white;
+}
+
+.existingApp select, h3, button {
+    margin: 10px 0;
+}
+
+.noMoreApps {
+    display: block;
+    text-align: center;
+}
+
+.appWarn {
+    color: red;
+}
+
+.profile-container {
+    display: flex;
+    height: 150vh;
+    background-color: lightgray;
+    text-align: center;
+    justify-content: center;
+}
+.delete-my-acct-popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+
+  }
+  
+  .delete-my-acct-popup h3,
+  .delete-my-acct-popup p {
+    margin-bottom: 10px;
+  }
+  
+  .delete-my-acct-popup button {
+    margin-top: 10px;
+  }
+
+  .deleteUsers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .deleteUsers h1 {
+    margin: 15px;
+  }
+
+  .removeButtonOptionContainer {
+    display:flex;
+    align-content: center;
+  }
+  .removeButtonOption {
+    background-color: #779ecb ;
+    font-size: medium;
+    display:inline-block;
+    color: white;
+    padding: 10px;
+    width: 200px;
+    border: 0px;
+    margin-right: 5%;
+    margin-bottom: 20px;
+  }
+
+  .userMgmtContainer {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 10px;
+  }
+
+  .userMgmtContainer button {
+    height: 50px;
+    font-size: large;
+    width: 300px;
+    margin: 15px;
+  }
+  .userMgmtContainer h1 {
+    margin: 15px;
+  }
+
+  .userMgmtContainer button {
+   width: 200px
+  }
+  .userMgmtContainer select {
+    width: 300px
+   }
+
+   .userMgmtContainer input {
+    width: 300px
+
+   }
+
+   .appCommentPopup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    text-align: center;
+   }
+
+   .acceptButtonPopup {
+    background-color: MediumSeaGreen ;
+    color: white;
+    padding: 10px;
+    width: 100px;
+    border: 0px;
+   }
+
+   .rejectButtonPopup {
+    background-color: tomato;
+    color: white;
+    padding: 10px;
+    width: 100px;
+    border: 0px;
+
+   }

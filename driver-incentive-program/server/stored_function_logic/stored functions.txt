@@ -1,0 +1,23 @@
+stored props & functions
+-------------------------
+get_sponsor_id(username) —> returns the user’s sponsor organization ID
+get_user_id(username) —> return user’s unique ID, -1 if username not in DB
+handle_login(username, pass) —> checks if the correct password is entered and logs login attempt, returns 1 if login correct, 0 if incorrect
+new_application(username, sponsor_name) —> logs application submission
+get_user_type(username) --> returns D, S, or A for user type
+log_pw_change(username, type) —> logs password change (type could be forgotten or willingly changing it ?)
+get_user_type(username) --> returns D, S, or A for user type
+getSponsorUserSponsorID(user id) --> returns id of sponsor org that sponsor (userid) works for
+
+triggers
+--------
+when password is changed, it will automatically be logged
+when driver is accepted or fired, it will be automatically logged
+when driver applies or is added to a new company, it is automatically logged
+when a user is deleted: 
+	- pending drivers will be set to status p-removed in driverSponsor
+	- rejected drivers will be set to status r-removed in driverSponsor
+	- drivers currently working for a sponsor will be set to status former in driverSponsor
+	- sponsors will be removed from sponsors 
+	- all users automatically logged w/ logType acct-deleted
+when a sponsor is added to sponsors, automatically logged
